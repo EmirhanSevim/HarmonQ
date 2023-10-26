@@ -25,74 +25,61 @@
     <DxColumn data-field="tutar" data-type="string" />
     <DxColumn data-field="uuid" data-type="string" />
     <DxPaging :page-size="12" />
-    <DxPager
-      :show-page-size-selector="true"
-      :allowed-page-sizes="[8, 12, 20]"
-    />
+    <DxPager :show-page-size-selector="true" :allowed-page-sizes="[8, 12, 20]" />
   </DxDataGrid>
 </template>
 <script setup>
-  import {
-    DxDataGrid,
-    DxColumn,
-    DxPaging,
-    DxPager,
-    DxButton,
-  } from "devextreme-vue/data-grid";
-  import CustomStore from "devextreme/data/custom_store";
-  import { useModalStore } from "../stores/ModalStore";
-  import { ref } from "vue";
-  import { RouteLocationNormalized } from "vue-router";
+import { DxDataGrid, DxColumn, DxPaging, DxPager, DxButton } from 'devextreme-vue/data-grid';
+import CustomStore from 'devextreme/data/custom_store';
+import { useModalStore } from '../stores/ModalStore';
+import { ref, defineProps, defineExpose } from 'vue';
 
-  const props = defineProps({
-    uuid: String,
-    router: RouteLocationNormalized,
-  });
+const props = defineProps({
+  uuid: String,
+  //router: RouteLocationNormalized,
+});
 
-  const elementRef = ref(null);
-  const testRef = ref({ aa: "aa", bb: "bb" });
+const elementRef = ref(null);
+const testRef = ref({ aa: 'aa', bb: 'bb' });
 
-  const modalStore = useModalStore();
+const modalStore = useModalStore();
 
-  const openModal = () => {
-    // router.replace("/home?id=75");
-    modalStore[props.uuid] = true;
-  };
+const openModal = () => {
+  // router.replace("/home?id=75");
+  modalStore[props.uuid] = true;
+};
 
-  const store = new CustomStore({
-    key: "id",
-    load(loadOptions) {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve({
-            data: [...Array(100).keys()].map((x) => ({
-              id: x,
-              kod: "kod-" + x,
-              ad: "ad-" + x,
-              tutar: Math.random() + 1000,
-            })),
-            totalCount: 100,
-          });
-        }, 150);
-      })
-        .then((data) => {
-          return {
-            data: data.data.slice(
-              loadOptions.skip,
-              loadOptions.skip + loadOptions.take
-            ),
-            totalCount: data.totalCount,
-          };
-        })
-        .catch(() => {
-          throw new Error("Data Loading Error");
+const store = new CustomStore({
+  key: 'id',
+  load(loadOptions) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          data: [...Array(100).keys()].map((x) => ({
+            id: x,
+            kod: 'kod-' + x,
+            ad: 'ad-' + x,
+            tutar: Math.random() + 1000,
+          })),
+          totalCount: 100,
         });
-    },
-  });
+      }, 150);
+    })
+      .then((data) => {
+        return {
+          data: data.data.slice(loadOptions.skip, loadOptions.skip + loadOptions.take),
+          totalCount: data.totalCount,
+        };
+      })
+      .catch(() => {
+        throw new Error('Data Loading Error');
+      });
+  },
+});
 
-  //eslint-disable-next-line
-  defineExpose({
-    elementRef,
-    testRef,
-  });
+//eslint-disable-next-line
+defineExpose({
+  elementRef,
+  testRef,
+});
 </script>

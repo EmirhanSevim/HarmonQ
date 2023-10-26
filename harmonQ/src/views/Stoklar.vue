@@ -1,6 +1,19 @@
+<script setup>
+import Menu from '../components/Menu.vue';
+import PageGrid from '../components/PageGrid.vue';
+import PageFilter from '../components/PageFilter.vue';
+import Home from './Home.vue';
+import CustomModal from '../components/CustomModal.vue';
+</script>
 <template>
-  <main class="stoklar-page">
-    <h1>Stoklar</h1>
-    <p>Stoklar Sayfasındasınız</p>
-  </main>
+  <div>
+    <div>
+      <Home />
+      <PageFilter />
+      <PageGrid />
+      <CustomModal />
+    </div>
+  </div>
+
+  <router-view></router-view>
 </template>
