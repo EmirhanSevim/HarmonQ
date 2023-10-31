@@ -8,7 +8,7 @@
   </button>
   <DxDataGrid
     ref="elementRef"
-    class="mt-1"
+    class="mt-1 p-4"
     :data-source="store"
     :show-borders="true"
     :remote-operations="true"

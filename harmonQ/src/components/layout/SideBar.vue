@@ -42,10 +42,10 @@ const hanc = (ww: any) => {
 };
 </script>
 <template>
-  <div class="header" v-if="isOpen">
-    <div @click="update" style="cursor: pointer; background-color: #f5f5f5; display: flex; justify-content: space-between; align-items: center">
+  <div class="header">
+    <div style="cursor: pointer; background-color: #f5f5f5; display: flex; justify-content: space-between; align-items: center">
       <div>
-        <span class="close-icon material-icons-outlined" style="font-size: 40px; margin-top: 8px">menu</span>
+        <span @click="update" class="close-icon material-icons-outlined" style="font-size: 40px; margin-top: 8px; margin-left: 15px">menu</span>
       </div>
 
       <div style="display: flex; justify-content: space-between; align-items: center">
@@ -75,7 +75,7 @@ const hanc = (ww: any) => {
   </div>
 
   <Menu
-    v-if="isOpen"
+    v-show="isOpen"
     :menu="AnaMenu"
     v-model:collapsed="collapsed"
     @item-click="hanc"
@@ -119,7 +119,7 @@ const hanc = (ww: any) => {
 }
 
 .close-icon {
-  margin-left: -40px;
+  margin-right: 15px;
 }
 
 * {

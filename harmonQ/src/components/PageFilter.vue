@@ -1,6 +1,6 @@
 <template>
   <form @submit="onSubmit" @reset="onReset" :initial-values="rowData">
-    <div class="w-full border p-1 rounded-lg">
+    <div class="w-full border p- rounded-lg">
       <div class="w-full flex flex-row justify-between align-center">
         <div class="flex">
           <span
