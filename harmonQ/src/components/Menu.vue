@@ -247,11 +247,11 @@ export default {
   },
   methods: {
     closeSidebar() {
-      this.isCollapsed = true; // Sidebar'ı kapat
+      this.isCollapsed = true;
       this.shiftListContainer();
     },
     toggleSidebar() {
-      this.$emit('update:collapsed', !this.isCollapsed); // collapsed özelliğini tersine çevir
+      this.$emit('update:collapsed', !this.isCollapsed);
     },
     onMenuScroll() {
       this.updateMenuScroll();

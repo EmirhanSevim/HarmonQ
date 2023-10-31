@@ -3,7 +3,11 @@ module.exports = {
   darkMode: 'class',
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        '258px': '258px',
+      },
+    },
   },
-  plugins: [],
+  plugins: [require('flowbite/plugin', 'tw-elements/dist/plugin.cjs')],
 };

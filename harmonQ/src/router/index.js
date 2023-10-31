@@ -6,7 +6,7 @@ import 'material-icons/iconfont/material-icons.css';
 
 const routes = [
   {
-    path: '/',
+    path: '/Login',
     name: 'login',
     component: Login,
   },

@@ -46,7 +46,7 @@ p {
 
 .login-form {
   background-color: #ffffff7a;
-  padding: 20px;
+  padding: 30px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   max-width: 300px;
@@ -66,7 +66,7 @@ p {
 
 input.input-field {
   width: 70%;
-  padding: 7px;
+  padding: 5px;
   font-size: 11px;
   border: 1px solid #ccc;
   border-radius: 5px;

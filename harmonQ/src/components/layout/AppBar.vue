@@ -79,8 +79,6 @@
 </template>
 
 <script setup>
-import { changeTheme } from '@/common/constantFunctions/changeTheme';
-
 // eslint-disable-next-line
 const emit = defineEmits(['sidebar-button-click']);
 </script>

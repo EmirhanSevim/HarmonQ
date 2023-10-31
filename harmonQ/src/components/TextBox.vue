@@ -27,6 +27,7 @@ const onChange = (e, c) => {
 <template>
   <DxTextBox
     type="number"
+    class="border"
     :value="inputValue"
     stylingMode="outlined"
     @input="onChange"
