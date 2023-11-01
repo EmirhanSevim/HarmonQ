@@ -130,4 +130,13 @@ export default {
   -ms-flex-direction: none !important;
   -webkit-box-orient: none !important;
 }
+.grid {
+  margin-top: 20px; /* Grid'i aşağı kaydırmak için */
+  margin-right: 20px; /* Grid'i sağa kaydırmak için */
+}
+
+.filter {
+  margin-top: 20px; /* Filtreyi aşağı kaydırmak için */
+  margin-right: 20px; /* Filtreyi sağa kaydırmak için */
+}
 </style>

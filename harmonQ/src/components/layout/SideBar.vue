@@ -24,7 +24,7 @@ const AnaMenu: any = [
       },
       {
         icon: { class: 'material-icons-outlined', text: 'group' },
-        href: '/Login',
+        href: '/',
         name: 'Müşteri & Tedarikçi',
       },
     ],
@@ -76,6 +76,7 @@ const hanc = (ww: any) => {
 
   <Menu
     v-show="isOpen"
+    style="padding: 4px; sm: ml -64px; margin-top: 5px; margin-right: 1rem"
     :menu="AnaMenu"
     v-model:collapsed="collapsed"
     @item-click="hanc"
@@ -86,7 +87,7 @@ const hanc = (ww: any) => {
   ></Menu>
   <div
     :class="{
-      'p-4': !collapsed,
+      'p-5': true,
       'sm:ml-64': !collapsed,
       'bg-slate-50 dark:bg-slate-800': true,
     }"
@@ -97,7 +98,7 @@ const hanc = (ww: any) => {
 
 <style lang="scss">
 .sidebar {
-  width: 250px;
+  min-width: 640px;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -125,6 +126,7 @@ const hanc = (ww: any) => {
 * {
   font-family: system-ui;
   font-size: 15px;
+  margin-left: 4px;
 }
 body {
   margin-left: 50px;

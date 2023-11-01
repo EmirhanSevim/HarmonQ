@@ -1,7 +1,7 @@
 <template>
   <form @submit="onSubmit" @reset="onReset" :initial-values="rowData">
     <div class="w-full border p- rounded-lg">
-      <div class="w-full flex flex-row justify-between align-center">
+      <div style="margin-top: 10px" class="w-full flex flex-row justify-end align-center">
         <div class="flex">
           <span
             v-for="key in keys"
@@ -75,7 +75,7 @@
             @click="accOpened = !accOpened"
             type="button"
             :class="{ 'rotate-180': accOpened }"
-            class="p-1 hs-collapse-toggle inline-flex justify-center items-center gap-2 rounded-full border border-transparent font-semibold text-blue-600 dark:text-blue-400 hover:bg-slate-200 dark:hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
+            class="p-1 hs-collapse-toggle inline-flex justify-start items-center gap-2 rounded-full border border-transparent font-semibold text-blue-600 dark:text-blue-400 hover:bg-slate-200 dark:hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
             id="hs-basic-collapse"
             data-hs-collapse="#hs-basic-collapse-heading"
           >
@@ -98,19 +98,19 @@
       >
         <hr class="h-px my-2 border-0 text-blue-800 bg-blue-800 rounded dark:bg-blue-300 dark:text-blue-300" />
         <div class="flex">
-          <div class="w-1/4 p-1 font-semibold">
+          <div class="w-1/3 p-1 font-semibold">
             Filtre-1
             <TextBox name="filter-1" />
           </div>
-          <div class="w-1/4 p-1 font-semibold">
+          <div class="w-1/3 p-1 font-semibold">
             Filtre-2
             <TextBox name="filter-2" />
           </div>
-          <div class="w-1/4 p-1 font-semibold">
+          <div class="w-1/3 p-1 font-semibold">
             Filtre-3
             <TextBox name="filter-3" />
           </div>
-          <div class="w-1/4 p-1 font-semibold">
+          <div class="w-1/3 p-1 font-semibold">
             Filtre-4
             <TextBox name="filter-4" />
           </div>
